@@ -1,16 +1,53 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using ProjectName;
+using PrimeSifting.Models;
+using System;
+using System.Collections.Generic;
 
-namespace ProjectName.Tests
+namespace PrimeSifting.Tests
 {
-  [TestClass]
-  public class ClassNameTests
-  {
-    [TestMethod]
-    public void NameOfMethodWeAreTesting_DescriptionOfBehavior_ExpectedReturnValue()
+    [TestClass]
+    public class PrimeNumberTests : IDisposable
     {
-      // any necessary logic to prep for test; instantiating new classes, etc.
-      Assert.AreEqual(EXPECTED RESULT, CODE TO TEST);
-    }    
-  }
+        public void Dispose()
+        {
+            PrimeNumber.ClearAll();
+        }
+        [TestMethod]
+        public void PrimeNumberConstructor_CreatesInstanceOfPrimeNumber_PrimeNumber()
+        {
+            PrimeNumber newPrimeNumber = new PrimeNumber(3);
+            Assert.AreEqual(typeof(PrimeNumber), newPrimeNumber.GetType());
+        }
+        [TestMethod]
+        public void GetNumber_ReturnsNumber_Int()
+        {
+            int number = 3;
+            PrimeNumber newPrimeNumber = new PrimeNumber(number);
+
+            int result = newPrimeNumber.Number;
+
+            Assert.AreEqual(number, result);
+        }
+        [TestMethod]
+        public void SetNumber_SetNumber_Int()
+        {
+            int number = 3;
+            PrimeNumber newPrimeNumber = new PrimeNumber(number);
+
+            int updatedNumber = 4;
+            newPrimeNumber.Number = updatedNumber;
+            int result = newPrimeNumber.Number;
+
+            Assert.AreEqual(updatedNumber, result);
+        }
+        [TestMethod]
+        public void GetNumbers_ReturnsEmptyList_PrimeNumberList()
+        {
+            List<PrimeNumber> newList = new List<PrimeNumber> { };
+
+            List<PrimeNumber> result = PrimeNumber.GetNumbers();
+
+            CollectionAssert.AreEqual(newList, result);
+        }
+    }
 }
