@@ -43,9 +43,36 @@ namespace PrimeSifting.Tests
         [TestMethod]
         public void GetNumbers_ReturnsEmptyList_PrimeNumberList()
         {
-            List<PrimeNumber> newList = new List<PrimeNumber> { };
+            List<int> newList = new List<int> { };
 
-            List<PrimeNumber> result = PrimeNumber.GetNumbers();
+            List<int> result = PrimeNumber.GetNumbers(4, newList);
+
+            CollectionAssert.AreEqual(newList, result);
+        }
+        [TestMethod]
+        public void GetNumbers_ReturnsListOfNumbersFromTwoToNumber_PrimeNumberList()
+        {
+            int number = 10;
+            PrimeNumber newPrimeNumber = new PrimeNumber(number);
+            List<int> newList = new List<int> { 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+            List<int> testList = new List<int> { };
+            // Console.WriteLine(newPrimeNumber.Number);
+            // for (int i = 2; i <= newPrimeNumber.Number; i++)
+            // {
+            //     newList.Add(i);
+            // }
+            Console.WriteLine("NUMLIST LENGTH: {0}", newList.Count);
+
+            List<int> result = PrimeNumber.GetNumbers(number, testList);
+
+            // foreach (int thisNumber in newList)
+            // {
+            //     Console.WriteLine(thisNumber);
+            // }
+            foreach (int thisNumber in result)
+            {
+                Console.WriteLine(thisNumber);
+            }
 
             CollectionAssert.AreEqual(newList, result);
         }
