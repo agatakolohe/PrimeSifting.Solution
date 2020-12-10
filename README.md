@@ -1,12 +1,19 @@
-# Application Name
+# Prime Sifting
 
-#### Description of application, date-2020
+#### Application that returns all prime number less than inputted number, 12-10-2020
 
 #### By Agata Kolodziej
 
 ## Description
 
-Purpose usage, detailed explanation what is does and any other information you want users and other developers to have
+Given a number, write a method that returns all of the prime numbers less than that number
+Sieve of Eratosthenes to find a number up to a given number:
+
+- Create a list of numbers from 2 through n: 2,3,4, .., number
+- Initially, let prime equal 2, the first prime number
+- Starting from prime, remove all multiples of prime from the list
+- Increment prime by 1
+- When you reach number, all the remaining number in the list are primes
 
 ## Specifications
 
