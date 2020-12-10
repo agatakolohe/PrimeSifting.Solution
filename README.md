@@ -20,10 +20,14 @@ Sieve of Eratosthenes to find a number up to a given number:
 <details>
   <summary>Expand Specs</summary>
 
-### Describe: functionName()
+### Describe: PrimeNumber()
 
-| Test | Expect |
-| ---- | ------ |
+| Test                       | Expect                                                     |
+| -------------------------- | ---------------------------------------------------------- |
+| Create PrimeNumber object  | PrimeNumber newPrimeNumber = new PrimeNumber();            |
+| PrimeNumber holds a number | newPrimeNumber.Number.toEqual(number);                     |
+| Add number to to list      | List<PrimeNumber> \_numbers = new List <PrimeNumumber> {}; |
+| Create list for numbers    |
 
 </details>
 
